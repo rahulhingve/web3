@@ -1,3 +1,4 @@
+import { createMint } from "@solana/spl-token";
 
 export function TokenLaunchpad() {
 
@@ -23,3 +24,13 @@ export function TokenLaunchpad() {
         <button onClick={createToken} className='btn'>Create a token</button>
     </div>
 }
+
+
+const mint = await createMint(
+        connection,
+        payer,
+        mintAuthority,
+        null,
+        6,
+        TOKEN_PROGRAM_ID
+);
